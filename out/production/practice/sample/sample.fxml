@@ -25,32 +25,20 @@
     <children>
       <AnchorPane prefHeight="562.0" prefWidth="1106.0">
          <children>
-              <AnchorPane prefHeight="583.0" prefWidth="1072.0" style="-fx-background-color: #e6e7e7;">
+              <AnchorPane prefHeight="583.0" prefWidth="1072.0">
                   <children>
-                  <MenuBar layoutY="2.0" prefHeight="11.0" prefWidth="889.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="File">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Delete" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="About" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
-                      <Button layoutX="945.0" layoutY="153.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="107.0" text="Добавить ребро" />
-                      <Button layoutX="374.0" layoutY="481.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="289.0" text="Алгоритм Дейкстры" textFill="#1abaeb" AnchorPane.bottomAnchor="28.0">
+                      <Button layoutX="945.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleAddEdge" prefHeight="54.0" prefWidth="107.0" text="Добавить ребро">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                      <Button defaultButton="true" layoutX="374.0" layoutY="481.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="289.0" text="Алгоритм Дейкстры" textFill="#3585da" AnchorPane.bottomAnchor="28.0">
                           <font>
                               <Font size="14.0" />
                           </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                       <Label layoutX="864.0" layoutY="127.0" text="Задайте вершины:" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.leftAnchor="864.0" AnchorPane.topAnchor="127.0" />
                       <TextArea layoutX="14.0" layoutY="58.0" prefHeight="516.0" prefWidth="182.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="58.0" />
@@ -88,18 +76,49 @@
                       <Label layoutX="200.0" layoutY="149.0" text="8" />
                       <Label layoutX="200.0" layoutY="110.0" text="9" />
                       <Label layoutX="195.0" layoutY="77.0" text="10" />
-                  <Button layoutX="945.0" layoutY="64.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="107.0" text="Добавить граф" textAlignment="JUSTIFY" />
+                  <Button layoutX="945.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleAddGraph" prefHeight="61.0" prefWidth="107.0" text="Добавить граф" textAlignment="JUSTIFY">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                   <Label layoutX="859.0" layoutY="36.0" text="Введите координаты графа" />
                   <Label layoutX="855.0" layoutY="69.0" text="X" />
                   <Label layoutX="856.0" layoutY="98.0" text="Y" />
-                  <TextField layoutX="875.0" layoutY="62.0" prefHeight="25.0" prefWidth="59.0" />
-                  <TextField layoutX="876.0" layoutY="94.0" prefHeight="25.0" prefWidth="59.0" />
+                  <TextField fx:id="graphX" layoutX="876.0" layoutY="65.0" prefHeight="25.0" prefWidth="59.0" />
+                  <TextField fx:id="graphY" layoutX="876.0" layoutY="94.0" prefHeight="25.0" prefWidth="59.0" />
                       <Label layoutX="810.0" layoutY="185.0" text="Конечная" />
                       <Label layoutX="808.0" layoutY="158.0" text="Начальная" AnchorPane.topAnchor="158.0" />
-                      <TextField layoutX="875.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="154.0" />
-                      <TextField layoutX="875.0" layoutY="181.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="181.0" />
-                  <Button layoutX="219.0" layoutY="32.0" mnemonicParsing="false" text="Вывести координаты" />
-                  <Button layoutX="377.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Вывести ребра" />
+                      <TextField fx:id="vertexGraph1" layoutX="876.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="154.0" />
+                      <TextField fx:id="vertexGraph2" layoutX="876.0" layoutY="181.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="181.0" />
+                  <Button layoutX="219.0" layoutY="32.0" mnemonicParsing="false" text="Вывести координаты">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="377.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Вывести ребра">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <MenuBar prefHeight="25.0" prefWidth="1072.0" AnchorPane.bottomAnchor="558.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
                   </children>
               </AnchorPane>
          </children>
