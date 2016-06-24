@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
@@ -23,11 +24,11 @@
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
     </rowConstraints>
     <children>
-      <AnchorPane prefHeight="562.0" prefWidth="1106.0">
+      <AnchorPane prefHeight="583.0" prefWidth="1083.0">
          <children>
-              <AnchorPane prefHeight="583.0" prefWidth="1072.0">
+              <AnchorPane layoutY="-14.0" prefHeight="597.0" prefWidth="1106.0">
                   <children>
-                      <Button layoutX="945.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleAddEdge" prefHeight="54.0" prefWidth="107.0" text="Добавить ребро">
+                      <Button layoutX="940.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleAddEdge" prefHeight="54.0" prefWidth="107.0" text="Добавить ребро">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -40,10 +41,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                      <Label layoutX="864.0" layoutY="127.0" text="Задайте вершины:" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.leftAnchor="864.0" AnchorPane.topAnchor="127.0" />
-                      <TextArea layoutX="14.0" layoutY="58.0" prefHeight="516.0" prefWidth="182.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="58.0" />
-                      <Label layoutX="14.0" layoutY="36.0" text="Статус" AnchorPane.leftAnchor="14.0" />
-                      <AnchorPane layoutX="217.0" layoutY="65.0" prefHeight="377.0" prefWidth="581.0" style="-fx-background-color: #d6f8ff;">
+                      <Label layoutX="859.0" layoutY="137.0" text="Задайте вершины:" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" AnchorPane.leftAnchor="859.0" AnchorPane.topAnchor="137.0" />
+                      <TextArea layoutX="14.0" layoutY="69.0" prefHeight="516.0" prefWidth="182.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="69.0" />
+                      <Label layoutX="14.0" layoutY="45.0" text="Статус" AnchorPane.leftAnchor="14.0" />
+                      <AnchorPane layoutX="217.0" layoutY="69.0" prefHeight="377.0" prefWidth="581.0" style="-fx-background-color: #d6f8ff;">
                           <cursor>
                               <Cursor fx:constant="DEFAULT" />
                           </cursor>
@@ -76,31 +77,31 @@
                       <Label layoutX="200.0" layoutY="149.0" text="8" />
                       <Label layoutX="200.0" layoutY="110.0" text="9" />
                       <Label layoutX="195.0" layoutY="77.0" text="10" />
-                  <Button layoutX="945.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleAddGraph" prefHeight="61.0" prefWidth="107.0" text="Добавить граф" textAlignment="JUSTIFY">
+                  <Button layoutX="940.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleAddVertexGraph" prefHeight="61.0" prefWidth="107.0" text="Добавить граф" textAlignment="JUSTIFY">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label layoutX="859.0" layoutY="36.0" text="Введите координаты графа" />
-                  <Label layoutX="855.0" layoutY="69.0" text="X" />
-                  <Label layoutX="856.0" layoutY="98.0" text="Y" />
-                  <TextField fx:id="graphX" layoutX="876.0" layoutY="65.0" prefHeight="25.0" prefWidth="59.0" />
-                  <TextField fx:id="graphY" layoutX="876.0" layoutY="94.0" prefHeight="25.0" prefWidth="59.0" />
-                      <Label layoutX="810.0" layoutY="185.0" text="Конечная" />
-                      <Label layoutX="808.0" layoutY="158.0" text="Начальная" AnchorPane.topAnchor="158.0" />
-                      <TextField fx:id="vertexGraph1" layoutX="876.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="154.0" />
-                      <TextField fx:id="vertexGraph2" layoutX="876.0" layoutY="181.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="181.0" />
-                  <Button layoutX="219.0" layoutY="32.0" mnemonicParsing="false" text="Вывести координаты">
+                  <Label layoutX="854.0" layoutY="46.0" text="Введите координаты графа" />
+                  <Label layoutX="850.0" layoutY="79.0" text="X" />
+                  <Label layoutX="851.0" layoutY="108.0" text="Y" />
+                  <TextField fx:id="graphX" layoutX="871.0" layoutY="75.0" prefHeight="25.0" prefWidth="59.0" />
+                  <TextField fx:id="graphY" layoutX="871.0" layoutY="104.0" prefHeight="25.0" prefWidth="59.0" />
+                      <Label layoutX="805.0" layoutY="195.0" text="Конечная" />
+                      <Label layoutX="803.0" layoutY="168.0" text="Начальная" AnchorPane.topAnchor="168.0" />
+                      <TextField fx:id="vertexGraph1" layoutX="871.0" layoutY="164.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="164.0" />
+                      <TextField fx:id="vertexGraph2" layoutX="871.0" layoutY="191.0" prefHeight="25.0" prefWidth="59.0" AnchorPane.topAnchor="191.0" />
+                  <Button layoutX="819.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Вывести координаты">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="377.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Вывести ребра">
+                  <Button layoutX="819.0" layoutY="261.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Вывести ребра">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <MenuBar prefHeight="25.0" prefWidth="1072.0" AnchorPane.bottomAnchor="558.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <MenuBar layoutX="-14.0" layoutY="14.0" prefHeight="25.0" prefWidth="1129.0" AnchorPane.bottomAnchor="558.0" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="14.0">
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>

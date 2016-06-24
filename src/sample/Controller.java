@@ -16,13 +16,13 @@ public class Controller {
     private TextField vertexGraph2;
     private Alert alert;
     @FXML
-    public void handleAddGraph () {
+    public void handleAddVertexGraph () {
         if (graphX.getText() == null || graphX.getText().length() == 0) {
-            error("Пожалуйста, заполните поле X");
+            error("Пожалуйста, заполните поле <X>");
         }
         else {
             if (graphY.getText() == null || graphY.getText().length() == 0) {
-                error("Пожалуйста, заполните поле Y");
+                error("Пожалуйста, заполните поле <Y>");
             }
             else {
                 try {
@@ -41,7 +41,31 @@ public class Controller {
         }
     }
     @FXML
-    public void handleAddEdge () {}
+    public void handleAddEdge () {
+        if (vertexGraph1.getText() == null || vertexGraph1.getText().length() == 0) {
+            error("Пожалуйста, заполните поле <Начальная>");
+        }
+        else {
+            if (vertexGraph2.getText() == null || vertexGraph2.getText().length() == 0) {
+                error("Пожалуйста, заполните поле <Конечная>");
+            }
+            else {
+                try {
+                    int x = Integer.parseInt(vertexGraph1.getText());
+                    int y = Integer.parseInt(vertexGraph2.getText());
+                    // Тут каким-то образом мы должны знать сколько вершин у нас существут и проверять их наличие
+                    // if (x > 15 || x < 0 || y > 10 || y < 0) {
+                    //   error("Не существет заданных вершин.");
+                    //}
+                    // и вот тут наконец-то начинается магия с соединением графов
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                    error("Введено некорректное значение в одно из полей! Пожалуста, вводите только цифры.");
+                }
+            }
+        }
+    }
 
     public void error(String s) {
         alert = new Alert(Alert.AlertType.ERROR);
