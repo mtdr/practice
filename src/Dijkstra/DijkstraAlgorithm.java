@@ -6,28 +6,32 @@ import java.util.Vector;
  * Created by FlipBook TP300LD on 24.06.2016.
  */
 public class DijkstraAlgorithm {
-    private long Inf = 2147483648L;//2147483647;
 
-    Vector <VertexDijkstra> a;
+
+    private int Inf = 2147483647;
+
+
     protected Vector<Integer> AlgDijkstra(int start, int end, Integer nSize, Vector<VertexDijkstra> arrOfLen)
     {
-        Vector<Integer> vLen(nSize);        //, Inf); // Длина путей
-        Vector<Integer> realWay(nSize, -1); // Предыдущие значения вершин
-        Vector<Integer> u (nSize,0); //Вектор посещенных вершин
-        vLen[start] = 0;
+//        int [] n = new int[nSize];
+        Vector<Integer> vLen = new Vector<>(nSize);//,Inf);    //(nSize);        //, Inf); // Длина путей
+        Vector<Integer> realWay = new Vector<>(nSize);//, -1); // Предыдущие значения вершин
+        Vector<Integer> u = new Vector<>(nSize);//),0); //Вектор посещенных вершин
+        vLen.add(start,0);
         int CurrV=start; //Текущий элемент
-        u[CurrV]=1;
+        u.add(CurrV,1);
         // Алгоритм
-        while(u[end]!=1) //Цикл выполняется до тех пор, пока не посетим конечную вершину
+
+        while(u.elementAt(end)!=1) //Цикл выполняется до тех пор, пока не посетим конечную вершину
         {
             int minLen=Inf;
             for (int v = 0; v < arrOfLen.size(); v++)
             {
-                if(arrOfLen.at(v)->source==CurrV)
+                if(arrOfLen.elementAt(v).source == CurrV)
                 {
-                    if (vLen[arrOfLen.at(v)->dest]>vLen[arrOfLen.at(v)->source] + arrOfLen.at(v)->length)
+                    if (vLen.elementAt(arrOfLen.elementAt(v).dest) > vLen.elementAt(arrOfLen.elementAt(v).source) + arrOfLen.elementAt(v).length)
                     {
-                        vLen[arrOfLen.at(v)->dest] = vLen[arrOfLen.at(v)->source] + arrOfLen.at(v)->length;
+                        vLen.elementAt(arrOfLen.elementAt(v).dest) = vLen.elementAt(arrOfLen.elementAt(v).source + arrOfLen.elementAt(v).length);
                         realWay[arrOfLen.at(v)->dest] = arrOfLen.at(v)->source;
                     }
                 }
